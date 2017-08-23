@@ -16,25 +16,25 @@
   </head>
   <body>
     <div id="container">
-      <h2>Uber-Shortener</h2>
-	  <br />
-	  
-	  @if(Session::has('errors'))
-		<div class="alert alert-warning">
-			{{$errors->first('link')}}
-		</div>
-	  <h3 class="error"></h3>
-	  @endif
-	  
-	  @if(Session::has('link'))
-		<div class="alert alert-success">
-		  <a href="{{Session::get('link')}}"> Click here for your shortened URL </a> 
-		</div>
-	  @endif
-	  
-	  <form name="frmURL" action="/" method="post" class="form-horizontal" novalidate="" >
-	  
-	  {{ csrf_field() }}
+		<h2>Uber-Shortener</h2>
+		<br />
+
+		@if(Session::has('errors'))
+			<div class="alert alert-warning">
+				{{$errors->first('link')}}
+			</div>
+			<h3 class="error"></h3>
+		@endif
+
+		@if(Session::has('link'))
+			<div class="alert alert-success">
+			  <a href="{{Session::get('link')}}"> Click here for your shortened URL </a> 
+			</div>
+		@endif
+
+		<form name="frmURL" action="/" method="post" class="form-horizontal" novalidate="" >
+
+		{{ csrf_field() }}
 			<div class="form-group error">
 				<label for="link" class="col-sm-1 control-label">link</label>
 				<div class="col-sm-8">
@@ -44,6 +44,12 @@
 			<input type="submit" value="Save" class="btn btn-info" ></button>
 
 		</form>
+		
+		<br />
+		
+		
+		
+		
 	  
     </div>
   </body>

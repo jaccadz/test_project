@@ -22,7 +22,7 @@ use App\Link;
 
 Route::get('/', function()	
 {
-  return View::make('form');
+  return View::make('form')->with('links', Link::all());
 });
 
 
@@ -65,3 +65,19 @@ Route::post('/',function(){
     }
   }
 });
+
+Route::get('{hash}',function($hash) {
+  //First we check if the hash is from a URL from our database
+  $link = Link::where('hash','=',$hash)
+  ->first();
+  //If found, we redirect to the URL
+  if($link) {
+    return Redirect::to($link->url);
+    //If not found, we redirect to index page with error message
+  } else {
+    return Redirect::to('/')
+    ->with('message','Invalid Link');
+  }
+})->where('hash', '[0-9a-zA-Z]{6}');
+
+

@@ -26,6 +26,12 @@
 	  <h3 class="error"></h3>
 	  @endif
 	  
+	  @if(Session::has('link'))
+		<div class="alert alert-success">
+		  <a href="{{Session::get('link')}}"> Click here for your shortened URL </a> 
+		</div>
+	  @endif
+	  
 	  <form name="frmURL" action="/" method="post" class="form-horizontal" novalidate="" >
 	  
 	  {{ csrf_field() }}

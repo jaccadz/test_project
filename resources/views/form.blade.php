@@ -48,7 +48,21 @@
 		<br />
 		
 		
-		
+		<div class="col-sm-9" >
+			<table class="table table-bordered pagin-table">
+				<thead>
+				<tr>
+					<th>Website</th>
+					<th>Short Link</th>
+				</tr>
+				</thead>
+				<tbody>
+					@foreach($links as $link)
+						<tr><td>{{ $link->url }}</td><td><a href="{{ $link->hash }}">{{ $link->hash }} </a> </td></tr>
+					@endforeach
+				</tbody>
+			</table>
+		</div>
 		
 	  
     </div>

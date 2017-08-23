@@ -47,7 +47,6 @@
 		
 		<br />
 		
-		
 		<div class="col-sm-9" >
 			<table class="table table-bordered pagin-table">
 				<thead>
@@ -64,7 +63,6 @@
 			</table>
 		</div>
 		
-	  
     </div>
   </body>
 </html>

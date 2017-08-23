@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	
     <title>URL Shortener</title>
 	
@@ -18,11 +19,20 @@
       <h2>Uber-Shortener</h2>
 	  <br />
 	  
-	  <form name="frmURL" action="/" method="post" class="form-horizontal" novalidate="">
+	  @if(Session::has('errors'))
+		<div class="alert alert-warning">
+			{{$errors->first('link')}}
+		</div>
+	  <h3 class="error"></h3>
+	  @endif
+	  
+	  <form name="frmURL" action="/" method="post" class="form-horizontal" novalidate="" >
+	  
+	  {{ csrf_field() }}
 			<div class="form-group error">
 				<label for="link" class="col-sm-1 control-label">link</label>
 				<div class="col-sm-8">
-					<input type="text" class="form-control has-error" placeholder="Insert your URL here and press enter!" > 
+					<input type="text" name="link" id="link" class="form-control has-error" placeholder="Insert your URL here and press enter!" > 
 				</div>
 			</div>
 			<input type="submit" value="Save" class="btn btn-info" ></button>

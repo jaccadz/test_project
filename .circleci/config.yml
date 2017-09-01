@@ -27,8 +27,8 @@ jobs:
 
     steps:
       - run: sudo apt-get update
-      - run: sudo docker-php-ext-install pdo
-      - run: sudo docker-php-ext-install pdo pdo_mysql
+      # - run: sudo docker-php-ext-install pdo
+      # - run: sudo docker-php-ext-install pdo pdo_mysql
 
       - checkout
 

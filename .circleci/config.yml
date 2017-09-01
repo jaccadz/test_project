@@ -35,6 +35,9 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
+      - run: copy .env.example .env
+      - run: php artisan key:generate
+      
       - save_cache:
           paths:
             - ./vendor

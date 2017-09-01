@@ -14,8 +14,8 @@ jobs:
         environment:
         - MYSQL_USER=ubuntu
         - MYSQL_PASSWORD=
-        command: [mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;']
-        command: [mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;']
+        # command: [mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;']
+        # command: [mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;']
         # command: [mysql -uubuntu urls < urls.sql]
 
       # Specify service dependencies here if necessary
@@ -49,6 +49,10 @@ jobs:
       - run: php artisan optimize
       - run: sudo chmod -R 775 storage
       - run: sudo chmod -R 775 bootstrap/cache
+
+      - run: mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;'
+      - run: mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;'
+      - run: mysql -uubuntu urls < urls.sql
 
       - save_cache:
           paths:

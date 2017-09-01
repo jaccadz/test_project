@@ -26,6 +26,10 @@ jobs:
     working_directory: ~/repo
 
     steps:
+      - run: apt-get update
+      - run: docker-php-ext-install pdo
+      - run: docker-php-ext-install pdo pdo_mysql
+
       - checkout
 
       # Download and cache dependencies
@@ -41,6 +45,8 @@ jobs:
       - run: php -r "unlink('composer-setup.php');"
       - run: php composer.phar self-update
       - run: sudo mv composer.phar /usr/local/bin/composer
+
+      - run: php -v
 
       - run: composer install -n --prefer-dist
 

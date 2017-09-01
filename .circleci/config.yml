@@ -9,6 +9,9 @@ jobs:
       # specify the version you desire here
       - image: circleci/php:7.1.5-browsers
       - image: circleci/mysql:5.7
+        environment:
+        - MYSQL_USER=ubuntu
+        - MYSQL_PASSWORD=
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -33,8 +36,6 @@ jobs:
       - run: php -r "unlink('composer-setup.php');"
       - run: php composer.phar self-update
       - run: sudo mv composer.phar /usr/local/bin/composer
-      - run: sudo apt-get update
-      - run: sudo apt-get install mysql-server
 
       - run: composer install -n --prefer-dist
 

@@ -35,11 +35,14 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
-      - run: cp .env.example .env
+      - run: cp .env.circle .env
       - run: php artisan key:generate
       - run: php artisan optimize
       - run: sudo chmod -R 775 storage
       - run: sudo chmod -R 775 bootstrap/cache
+      - run: mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;'
+      - run: mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;'
+      - run: mysql -uubuntu circle_test < database/urls.sql
 
       - save_cache:
           paths:

@@ -16,7 +16,7 @@ jobs:
         - MYSQL_PASSWORD=
         command: [mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;']
         command: [mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;']
-        command: [mysql -uubuntu urls < database/urls.sql]
+        command: [mysql -uubuntu urls < urls.sql]
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

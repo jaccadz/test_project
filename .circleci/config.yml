@@ -55,10 +55,11 @@ jobs:
       - run: php artisan optimize
       - run: sudo chmod -R 775 storage
       - run: sudo chmod -R 775 bootstrap/cache
+      - run: ls /usr/bin
 
-      - run: mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;'
-      - run: mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;'
-      - run: mysql -uubuntu urls < urls.sql
+      - run: /usr/bin/mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;'
+      - run: /usr/bin/mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;'
+      - run: /usr/bin/mysql -uubuntu urls < urls.sql
 
       - save_cache:
           paths:

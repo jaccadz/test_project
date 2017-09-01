@@ -81,3 +81,9 @@ Route::get('{hash}',function($hash) {
 })->where('hash', '[0-9a-zA-Z]{6}');
 
 
+Route::get('/test', function()
+{
+  return View::make('welcome');
+});
+
+

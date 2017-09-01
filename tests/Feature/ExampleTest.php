@@ -20,6 +20,6 @@ class ExampleTest extends TestCase
 
         //$response->assertStatus(200);
 
-        echo $response;
+        var_dump($response) ;
     }
 }

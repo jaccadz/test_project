@@ -9,14 +9,14 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/php:7.1.5-browsers
-      
+
       - image: circleci/mysql:5.7
         environment:
         - MYSQL_USER=ubuntu
         - MYSQL_PASSWORD=
         command: [mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;']
         command: [mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;']
-        command: [mysql -uubuntu circle_test < database/urls.sql]
+        command: [mysql -uubuntu urls < database/urls.sql]
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

@@ -57,6 +57,8 @@ jobs:
       - run: sudo chmod -R 775 bootstrap/cache
       - run: ls /usr/bin
 
+      - run: sudo chmod o+w
+
       - run:
           name: install dockerize
           command: sudo wget https://github.com/jwilder/dockerize/releases/download/v0.5.0/dockerize-linux-amd64-v0.5.0.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.5.0.tar.gz && rm dockerize-linux-amd64-v0.5.0.tar.gz

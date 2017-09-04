@@ -61,7 +61,7 @@ jobs:
 
       - run:
           name: install dockerize
-          command: sudo wget https://github.com/jwilder/dockerize/releases/download/v0.5.0/dockerize-linux-amd64-v0.5.0.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.5.0.tar.gz && rm dockerize-linux-amd64-v0.5.0.tar.gz --overwrite
+          command: sudo wget https://github.com/jwilder/dockerize/releases/download/v0.5.0/dockerize-linux-amd64-v0.5.0.tar.gz && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-v0.5.0.tar.gz --overwrite && rm dockerize-linux-amd64-v0.5.0.tar.gz
           environment:
             DOCKERIZE_VERSION: v0.3.0
 

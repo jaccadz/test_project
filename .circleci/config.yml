@@ -62,7 +62,7 @@ jobs:
 
       - run:
           name: Wait for db
-          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+          command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       - run: mysql -uubuntu -e 'DROP DATABASE IF EXISTS urls;'
       - run: mysql -uubuntu -e 'CREATE DATABASE IF NOT EXISTS urls;'

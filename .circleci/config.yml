@@ -27,8 +27,8 @@ jobs:
 
     steps:
       - run: sudo apt-get update
-      # - run: sudo apt-get install mysql-server mysql-client
-      # - run: sudo service mysql start
+      - run: sudo apt-get install mysql-server mysql-client
+      - run: sudo service mysql start
 
       - checkout
 

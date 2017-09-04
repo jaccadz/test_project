@@ -25,7 +25,8 @@ jobs:
     steps:
       - run: sudo apt-get update
       - run: sudo apt-get install mysql-server
-      - run: sudo /etc/init.d/mysql start
+      - run: sudo service mysql start
+
       # - run: sudo docker-php-ext-install pdo
       # - run: sudo docker-php-ext-install pdo pdo_mysql
 

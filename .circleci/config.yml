@@ -57,7 +57,7 @@ jobs:
       - run: sudo chmod -R 775 bootstrap/cache
       - run: ls /usr/bin
 
-      - run: sudo chmod o+w
+      - run: sudo chmod o+w .
 
       - run:
           name: install dockerize

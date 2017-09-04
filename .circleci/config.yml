@@ -8,15 +8,16 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/php:7.1.5-browsers
-        env:
-        - DB_HOST=localhost
       - image: library/mysql:5.7.17
         env:
         - MYSQL_USER=ubuntu
         - MYSQL_PASSWORD=
         - MYSQL_ROOT_HOST=localhost
         - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - image: circleci/php:7.1.5-browsers
+        env:
+        - DB_HOST=localhost
+
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images

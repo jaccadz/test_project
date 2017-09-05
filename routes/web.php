@@ -85,5 +85,3 @@ Route::get('/test', function()
 {
   return View::make('welcome');
 });
-
-

@@ -1,0 +1,41 @@
+Script started on Tue 05 Sep 2017 11:13:14 AM UTC
+PHPUnit 5.7.21 by Sebastian Bergmann and contributors.
+
+[31;1mE[0m[31;1mE[0m                                                                  2 / 2 (100%)
+
+Time: 1.47 seconds, Memory: 12.00MB
+
+There were 2 errors:
+
+1) Tests\Browser\ExampleTest::testBasicExample
+Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session with params: {"desiredCapabilities":{"browserName":"chrome","platform":"ANY"}}
+
+Failed to connect to localhost port 9515: Connection refused
+
+/home/vagrant/Code/test_project/vendor/facebook/webdriver/lib/Remote/HttpCommandExecutor.php:286
+/home/vagrant/Code/test_project/vendor/facebook/webdriver/lib/Remote/RemoteWebDriver.php:126
+/home/vagrant/Code/test_project/tests/DuskTestCase.php:34
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:209
+/home/vagrant/Code/test_project/vendor/laravel/framework/src/Illuminate/Support/helpers.php:706
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:210
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:116
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:88
+/home/vagrant/Code/test_project/tests/Browser/ExampleTest.php:22
+
+2) Tests\Browser\enterURLTest::testExample
+Facebook\WebDriver\Exception\WebDriverCurlException: Curl error thrown for http POST to /session with params: {"desiredCapabilities":{"browserName":"chrome","platform":"ANY"}}
+
+Failed to connect to localhost port 9515: Connection refused
+
+/home/vagrant/Code/test_project/vendor/facebook/webdriver/lib/Remote/HttpCommandExecutor.php:286
+/home/vagrant/Code/test_project/vendor/facebook/webdriver/lib/Remote/RemoteWebDriver.php:126
+/home/vagrant/Code/test_project/tests/DuskTestCase.php:34
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:209
+/home/vagrant/Code/test_project/vendor/laravel/framework/src/Illuminate/Support/helpers.php:706
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:210
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:116
+/home/vagrant/Code/test_project/vendor/laravel/dusk/src/TestCase.php:88
+/home/vagrant/Code/test_project/tests/Browser/enterURLTest.php:27
+
+[37;41mERRORS![0m
+[37;41mTests: 2[0m[37;41m, Assertions: 0[0m[37;41m, Errors: 2[0m[37;41m.[0m

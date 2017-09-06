@@ -41,7 +41,7 @@
 					<input type="text" name="link" id="link" class="form-control has-error" placeholder="Insert your URL here and press enter!" > 
 				</div>
 			</div>
-			<input type="submit" value="Save" class="btn btn-info" ></button>
+			<input type="submit" value="Save" class="btn btn-info" name="save" ></button>
 
 		</form>
 		

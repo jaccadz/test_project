@@ -24,6 +24,12 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install mysql-server mysql-client
       - run: sudo service mysql start
+      - run: sudo apt-get -y install libxpm4 libxrender1 libgtk2.0-0 libnss3 libgconf-2-4
+      - run: sudo apt-get update && sudo apt-get install -y google-chrome-stable
+      - run: sudo apt-get -y install xvfb gtk2-engines-pixbuf
+      - run: sudo apt-get -y install xfonts-cyrillic xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable
+      - run: sudo apt-get -y install imagemagick x11-apps
+      - run: Xvfb -ac :0 -screen 0 1280x1024x16 &
 
       - checkout
 
@@ -66,11 +72,30 @@ jobs:
       - run: mysql -uroot -e 'CREATE DATABASE IF NOT EXISTS urls;'
       - run: mysql -uroot urls < urls.sql
 
+
+
+      - run:
+          name: Start Chrome Driver
+          command: ./vendor/laravel/dusk/bin/chromedriver-linux
+          background: true
+      - run:
+          name: Run Laravel Server
+          command: php artisan serve
+          background: true
+
+
+
+
+
       - save_cache:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
 
       # run tests!!
-      - run: vendor/bin/phpunit
+      # - run: vendor/bin/phpunit
+
+      - run:
+          name: Run Laravel Dusk Tests
+          command: php artisan dusk
 

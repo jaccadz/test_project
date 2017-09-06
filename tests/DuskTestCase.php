@@ -37,7 +37,7 @@ abstract class DuskTestCase extends BaseTestCase
         if ($binary = env('DUSK_CHROME_BINARY')) {
             $chromeOptions->setBinary($binary);
         }
-        //$chromeOptions->setBinary('/usr/bin/chromium-browser');
+        $chromeOptions->setBinary('/usr/bin/chromium-browser');
         $chromeOptions->addArguments(['no-first-run']);
         $capabilities = DesiredCapabilities::chrome();
         $capabilities->setCapability(ChromeOptions::CAPABILITY, $chromeOptions);

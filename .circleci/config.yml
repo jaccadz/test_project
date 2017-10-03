@@ -56,7 +56,6 @@ jobs:
       - run: php artisan optimize
       - run: sudo chmod -R 775 storage
       - run: sudo chmod -R 775 bootstrap/cache
-      - run: ls /usr/bin
       - run: sudo chmod -R 777 /usr/local/bin
       - run:
           name: install dockerize

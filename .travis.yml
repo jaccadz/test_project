@@ -4,6 +4,9 @@ php:
   - 7.2
 node_js:
   - 8.11
+services:
+  - mysql
+  - mongodb
 before_install:
   - chmod +x install-dependencies.sh
 install: ./install-dependencies.sh

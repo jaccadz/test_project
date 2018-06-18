@@ -15,10 +15,8 @@ php artisan key:generate
 php artisan optimize
 mysql -uroot -e 'DROP DATABASE IF EXISTS urls;'
 mysql -uroot -e 'CREATE DATABASE IF NOT EXISTS urls;'
-mysql -e 'CREATE USER "codeship"@"localhost" IDENTIFIED BY "secret";'
-mysql -e 'GRANT ALL PRIVILEGES ON * . * TO "codeship"@"localhost";'
 mysql -uroot urls < urls.sql
-mongorestore --host=127.0.0.1 --db=talentpool_test --drop --dir=./data/test-data/dump/talentpool
+mongorestore --db=talentpool_test --drop --dir=./data/test-data/dump/talentpool
 # nvm install 8.11
 node -v
 npm install

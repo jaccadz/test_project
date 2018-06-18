@@ -22,9 +22,9 @@ node -v
 npm install
 npm run dev
 # nohup bash -c "./vendor/laravel/dusk/bin/chromedriver-linux 2>&1 &"
-./vendor/laravel/dusk/bin/chromedriver-linux &
-# chromedriver --version
-# chromedriver &
+# ./vendor/laravel/dusk/bin/chromedriver-linux &
+chromedriver --version
+chromedriver &
 # Prepare the test database
 php artisan migrate
 # nohup bash -c "php artisan serve 2>&1 &"

@@ -1,0 +1,6 @@
+language: php
+sudo: enabled
+php:
+  - 7.2
+install: ./install-dependencies.sh
+script: ./vendor/bin/phpunit --bootstrap vendor/autoload.php --debug --colors=always

@@ -10,7 +10,7 @@ php -v
 # Prepare cache directory and install dependencies
 mkdir -p ./bootstrap/cache
 composer install --prefer-dist --no-scripts
-cp .env.codeship .env
+cp .env.travis .env
 php artisan key:generate
 php artisan optimize
 mysql -uroot -e 'DROP DATABASE IF EXISTS urls;'

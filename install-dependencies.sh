@@ -17,7 +17,7 @@ mysql -uroot -e 'DROP DATABASE IF EXISTS urls;'
 mysql -uroot -e 'CREATE DATABASE IF NOT EXISTS urls;'
 mysql -uroot urls < urls.sql
 mongorestore --db=talentpool_test --drop --dir=./data/test-data/dump/talentpool
-# nvm install 8.11
+nvm install 8.11
 node -v
 npm install
 npm run dev

@@ -21,6 +21,7 @@ class enterURLTest extends DuskTestCase
     {
         $this->browse(function ($browser) {
             $browser->visit('/')
+                ->assertSee('Shortener')
                 ->type('link', 'https://yts.ag')
                 ->press('save')
                 ->assertPathIs('/');

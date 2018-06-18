@@ -17,6 +17,7 @@ class clickLinkTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
+               ->assertSee('Shortener')
                 ->clickLink('5uj9gx')
                 ->assertPathIs('/');
         });

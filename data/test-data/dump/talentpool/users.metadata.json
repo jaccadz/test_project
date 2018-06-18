@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"talentpool.users"},{"v":1,"key":{"user_id":1},"name":"user_id_1","ns":"talentpool.users"},{"v":1,"key":{"created_at":-1.0},"name":"created_at_-1","ns":"talentpool.users"}]}
